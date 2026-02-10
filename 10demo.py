@@ -145,13 +145,20 @@ def is_probability(p):
 print(is_probability(1.5))
 print(is_probability(0.5))
 
-def dna_completment(t):
-	if t == 'A': return 'T'
-	if t == 'C': return 'G' 
-	if t == 'G': return 'C' 
-	if t == 'T': return 'A'
+def dna_completment(nt):
+	if nt == 'A': return 'T'
+	if nt == 'C': return 'G' 
+	if nt == 'G': return 'C' 
+	if nt == 'T': return 'A'
 	return 'None'
 	
 print(dna_completment('T'))
 print(dna_completment('H'))
 
+
+def max3(a, b, c):
+	if a > b and a > c: return a
+	if b > c: 			return b 
+	return c 
+	
+print(max3( 3, 5, 7))
