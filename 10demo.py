@@ -162,3 +162,33 @@ def max3(a, b, c):
 	return c 
 	
 print(max3( 3, 5, 7))
+
+
+i = 0
+while True:
+	i = i + 1
+	print('hey', i)
+	if i == 3: break
+	
+
+i = 0 
+while i < 3: 
+	i = i + 1
+	print('hey', i)
+	
+i = 1 
+while i < 10: 
+	print(i)
+	i = i + 3
+print('final value of i is', i)
+
+# for i in range (most loops in python are for loops)
+
+for i in range(1, 10, 3):		#initial value (1), end value (10), increment(3)
+	print(i)
+	
+for i in range(0,5):			#default increment is 1
+	print(i)
+	
+for i in range(5):
+	print(i) 
