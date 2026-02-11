@@ -34,17 +34,3 @@ def tm(s):
 seq = sys.argv[1]
 print(tm(seq))
 
-
-#crazy string from exam 2 
-
-def crazy(s):
-	cs = ''
-	for i, c in enumerate(s):
-		if i % 2 == 0: 	cs += c.upper()
-		else: 			cs += c.lower()
-
-filename = sys.argv[1]	
-with open(filename) as fp: 
-	for line in fp: 
-		crazyline = crazy(line)
-		print(crazyline)

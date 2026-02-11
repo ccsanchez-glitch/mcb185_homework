@@ -190,5 +190,6 @@ for i in range(1, 10, 3):		#initial value (1), end value (10), increment(3)
 for i in range(0,5):			#default increment is 1
 	print(i)
 	
-for i in range(5):
+for i in range(5):				#default start is 0 
 	print(i) 
+	
