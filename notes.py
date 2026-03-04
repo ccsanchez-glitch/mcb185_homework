@@ -204,7 +204,7 @@ def translate(seq):
 	trans = 'KNKNTTTTRSRSIIMIQHQHPPPPRRRRLLLLEDEDAAAAGGGGVVVV*Y*YSSSS*CWCLFLF'		
 	
 print(translate(''))
-'''
+
 
 import random 
 
@@ -218,3 +218,72 @@ while True:
 	else: 		inside += 1 
 	
 	print(4 * inside / (inside + outside))
+''' 
+
+'''
+# exam 3 qs 41-49 
+#45 longest poly a 
+
+seq = 'ACGTAAACTAT'
+print(seq)
+max_run = 0 
+max_pos = None
+i = 0 
+while i < len(seq):
+	if seq[i] == 'A':
+		run_start = i 
+		run_len = 1
+		for j in range(i+1, len(seq)):
+			if seq[j] == 'A':run_length += 1 
+			else: break
+		i = j
+			if run_len > max_run: 
+				max_run = run_len
+				max_pos = run_start
+		print(run_start, run_len)
+	i += 1 
+'''	
+'''
+ write a program fizzprime.py
+- prints the numbers 1-100 
+- if the number is prime, print 'fizz' star after it 
+- run the program 
+- pipe it to grep and remove all non-fizz lines
+- redirect the output to a file called 'fizz.txt'
+
+
+def is_prime(n): 
+	if n == 1: return True
+	for i in range(2,n):
+		if n % i == 0: return False
+	return True
+			
+for 
+'''
+
+#49 dust, entropy fulter 
+import math 
+def entropy(s):
+	if pa != 0: pa = s.count('A') / len(s)
+	if pc != 0: pc = s.count('C') / len(s)
+	if pg != 0: pg = s.count('G') / len(s)
+	if pt != 0: pt = s.count('T') / len(s)
+	h = 0 
+	h -= pa * math.log2(pa)
+	h -= pc * math.log2(pc)
+	h -= pg * math.log2(pg)
+	h -= pt * math.log2(pt)
+	return h 
+
+seq = 'ABDCDEFGHIKJKLM'
+sed = list(seq)
+k = 4 
+soft = True
+for i in range(len(seq) -k+1):
+	win = seq[i:i+k]
+	if entropy(win) , 1.0:
+		for j in range(1, i+k):
+			if soft: sed[j] = sed[j].lower
+			else: sed[j] = 'N'
+			
+print(''.join(sed))
