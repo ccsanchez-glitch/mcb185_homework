@@ -262,6 +262,7 @@ for
 '''
 
 #49 dust, entropy fulter 
+
 import math 
 def entropy(s):
 	if pa != 0: pa = s.count('A') / len(s)
