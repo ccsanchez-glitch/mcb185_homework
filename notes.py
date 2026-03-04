@@ -288,3 +288,12 @@ for i in range(len(seq) -k+1):
 			else: sed[j] = 'N'
 			
 print(''.join(sed))
+
+
+def dust(seq, k, t):
+	sed = list(seq)
+	for i in range(len(seq) -k+1):
+		if entropy(seq[i:i+k]) < t:
+			for j in range(1, 1+k):
+				sed[j] = 'N'
+	return ''.join(sed)
