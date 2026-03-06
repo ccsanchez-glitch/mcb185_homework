@@ -259,7 +259,6 @@ def is_prime(n):
 	return True
 			
 for 
-'''
 
 #49 dust, entropy fulter 
 
@@ -297,3 +296,80 @@ def dust(seq, k, t):
 			for j in range(1, 1+k):
 				sed[j] = 'N'
 	return ''.join(sed)
+''' 
+
+# 42 triples 
+
+for a in range(1,15):
+	for b in range(a+1,15):		#half matrix minus diagonal, no duplicates
+		c = (a**2 + b**2)**0.5
+		if c % 1 != 0: continue
+		print(a, b, c)
+		
+		
+		
+stuff = ('A', 'B', 'C', 'D')
+for i in range(len(stuff)):
+	for j in range(i+1, len(stuff)):
+		print(stuff[i], stuff[j])
+		
+# 43 birthday 
+
+import sys 
+import random
+
+cal = int(sys.argv[1])
+num = int(sys.argv[2])
+
+
+shared = False
+birthdays= []  # or birthdays = list() birthdays is a list for the num of people 
+for _ in range(num):
+	birthdays.append(random.randint(0, cal-1))
+for i in range(num):
+	for j in range(i+1, num):
+		if birthday[i] == birthdays[j]:
+			shared = True
+			
+if shared: 	print('hooray')
+else: 		print('not this time')
+
+
+# 44 use a list for the calendar
+
+import sys 
+import random
+cal = int(sys.argv[1])		#days in year
+num = int(sys.argv[2])		#number of people
+
+shared = False		#flag, not we get to not print hooray twice 
+calendar = [0] * cal 
+for _ in range(num):
+	date = random.randint(0, cal-1)
+	calendat[date] += 1 
+
+for date in range(cal):
+	if calendar[date] > 1: shared = True
+if shared: 	print('hooray')
+else: 		print('not this time')
+
+
+# 46 function(on exam says function) char_count.py 
+	
+s = 'hello	this is fun!'
+characters = []
+char_count = []
+for c in s: 
+	if c not in characters: 
+		print('first time seeing', c)
+		characters.append(c)
+		char_count.append(1)
+	else: 
+		print('seen', c, 'before, adding 1')
+		idx = characters.index(c)
+		char_count[idx] += 1
+		
+for c, n in zip(characters, char_count):
+	if ord(c) <= 32:	print(ord(c), n)
+	else 				print(c, n)	
+
