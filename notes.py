@@ -373,3 +373,38 @@ for c, n in zip(characters, char_count):
 	if ord(c) <= 32:	print(ord(c), n)
 	else 				print(c, n)	
 
+
+# idk what happened here, theres a picture from class 
+
+s = 'hello	this is fun!'
+chars = [0] * 128
+for c in s: 
+	ascii_
+	
+
+
+# dust function
+import math 
+def entropy(seq):
+	pa = seq.count('A') / len(seq)
+	pc = seq.count('C') / len(seq)
+	pg = seq.count('G') / len(seq)
+	pt = seq.count('T') / len(seq)
+	h = 0
+	if pa != 0: h -= pa * math.log2(pa)
+	if pc != 0: h -= pc * math.log2(pc)
+	if pg != 0: h -= pg * math.log2(pg)
+	if pt != 0: h -= pt * math.log2(pt)
+	return h 
+
+seq = 'ACGTACGTAAAAAAAAAACGTACGT' #cant edit strings 
+hard = 'ACGTACGTNNNNNNNNNNCGTACGT'
+k = 5	#window size 
+t = 1.0 #entropy threshold
+mask = list(seq)
+for i in range(len(seq) -k+1):
+	if entropy(seq[i,i+ k]) > t: continue
+	for j in range(i, i+k): 
+		mask[j] = 'N'		# mask[j] = seq[j].lower()
+		
+print(''.join(mask))		
