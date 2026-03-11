@@ -3,7 +3,7 @@ zless ~/Code/MCB185/data/GCF_000005845.2_ASM584v2_genomic.gff.gz
  
  Create a program called 31cdslength.py that reports the lengths of protein-coding genes in the E. coli genome. The program will need to perform the following tasks as it reads each line of the file.
 
-Skip over comment lines
+Skip over comment lines 
 Find CDS features (or skip over all non-CDS features)
 Extract the begin and end coordinates
 Convert the coordinates to integers
@@ -27,7 +27,7 @@ with gzip.open(sys.argv[1], 'rt') as fp:
  
 with gzip.open(sys.argv[1], 'rt') as fp:
 	for line in fp:
-		if line[0] == '#': continue 
+		if line[0] == '#': continue #continue will end the loop and start the next iteration at the beginning 
 		words = line.split()
 		if words[2] == 'CDS': continue 
 		beg = int(words[3])

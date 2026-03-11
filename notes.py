@@ -298,6 +298,7 @@ def dust(seq, k, t):
 	return ''.join(sed)
 ''' 
 
+'''
 # 42 triples 
 
 for a in range(1,15):
@@ -408,3 +409,130 @@ for i in range(len(seq) -k+1):
 		mask[j] = 'N'		# mask[j] = seq[j].lower()
 		
 print(''.join(mask))		
+'''
+# probably on exam, remember to put break 
+import sys 
+import random 
+num_days = int(sys.argv[1])
+num_people = int(sys.argv[2])
+birthdays = list()
+found = False
+for i range(num_people):
+	date = random.randint(0, num_days-1)
+	if date in birthdays: 
+		found = True
+		break 
+	birthdays.append(date)
+	print(birthdays) #watch list get longer
+print(found) 
+
+for i in range(0, num_people):
+	for j in range(0, num_people):
+	
+# make a list out of the calendar 
+
+import sys 
+import random 
+
+num_days = int(sys.argv[1])
+num_people = int(sys.argv[2])
+
+calendar = list()
+calendar[0] * num_days
+#make an empty calendar		 for i in range(number):
+for i in range(num_people):	 # in = item in container:
+	date = random.randint(0, num_days-1):
+	calendar[date] +=1 #set a birthday 
+
+#check calendar for shared birthdays
+found = False
+for i in range(num_people):
+	if calendar[i] >1: 
+		found = True
+		break		#remember this for more points 
+print(found)
+
+OR 
+for i in range(num_people):
+	date = random.randint(0, num_days-1)
+	if calendar[date] != 0: 
+		found = True
+		break 
+	calendar[date] += 1
+	
+# 41 on exam scoring matrix for aligning matrix 
+
+show_matrix.py ACGT +2 -1 
+
+import sys 
+alph = sys.argv[1]	#dont convert to numbers 
+mat = sys.argv[2]
+mis = sys.argv[3]
+
+#print the header line, there is just one 
+print('	 ', end='')
+for nt in alph: 
+	print(nt, end='')
+print()		#print the end of the line 
+
+for nt1 in alph: 
+	print(nt1, end=' ')
+	for nt2 in alph: 
+		if nt1 == nt2: print(mat, end=' ')
+		else: print(mis, end=' ')
+	print()
+	
+OR use i and j 
+
+for i in range(0, len(alph)):
+	for j in range(0, len(alph)):
+		if i == j:	 print(mat, end=' ')
+		else: 		 print(mis, end=' ')
+	print()
+	
+#49 THIS ONE ON EXAM 
+#write a function dust(seq, w, t)
+import math
+
+def entropy(seq): 
+	pa = seq.count('A') / len(seq)
+	pc
+	pg
+	pt
+	h = 0 
+	if pa != 0: h -= pa * math.log2(pa)
+	if pc != 0: h -= pc
+	if pg != 
+	if pt != 
+	return h 
+	
+def dust(seq, w, t): 
+	eseq = list(seq)
+	for i in range(len(seq) -w+1):
+		win = seq[i: i+w]
+		if entropy(win) < t:
+			for j in range(i, i+w): eseq[j] = 'N'#hard mask
+			# if soft eseq[j] = seq[j].lower
+	return ''.join(eseq) #return it as a string 
+
+
+print(dust('ACGTAAAAAAACGT', 6, 1.1))
+
+
+#48 gc allowances , program
+
+# command line : python3 gc_analysis ATATATCAAATTAGC 7 
+
+import sys 
+seq = sys.argv[1]
+k = int(sys.argv[2])
+
+for i in range(len(seq) -k+1):
+	win = seq[i:i+k]
+	g = win.count('G')
+	c = win.count('C')
+	gc_comp = (c + g) / k 
+	#gc_skew = (g-c)/(g+c) if g+c != 0 else 0
+	if g+c == 0:	gc_skew = 0
+	else:			gc_skew = (g-c)/(g+c)
+	print(i, win, c, g, gc_comp, gc_skew)
